@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task & Note Manager</title>
+    <link rel="shortcut icon" href="assets/images/brand/favicon.png">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/libraries/animate.css">
+    <link rel="stylesheet" type="text/css" href="assets/fonts/fa/all.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+<section class="container">
+    <div class="row">
+        <div class="col-xl-4 col-lg-4 col-md-2 col-sm-1 col-xs-12"></div>
+
+        <div class="col-xl-4 col-lg-4 col-md-8 col-sm-10 col-xs-12">
+            <div class="body pt-4">
+
+                <div class="row mt-2 animated fadeInDown">
+                    <div class="col-4 pl-5">
+                        <img alt="logo" src="assets/images/brand/logo-128.png" width="50px">
+                    </div>
+                    <div class="col-8 text-right pr-5 pt-3">
+                        <i class="fa fa-trash-alt text-danger display-5 mr-4 tapable"></i>
+                        <i class="fa fa-times display-5 text-muted tapable"></i>
+                    </div>
+                </div>
+
+                <div class="row mt-5">
+                    <div class="col-2"></div>
+                    <div class="col-10 pl-0 animated fadeIn">
+
+                        <h4 class="font-weight-normal text-truncate pr-2 mb-0">
+                            <strong class="">My Tasks that are awesome</strong>
+                        </h4>
+                        <small class="text-muted">2 of 7 Completed</small>
+                        <hr class="border">
+                    </div>
+                </div>
+                <div class="tasks-wrapper pt-1 pb-5">
+
+                    <!-- task item start -->
+                    <div class="row animated fadeInUp pl-3 pr-2 mt-1">
+                        <div class="col-2">
+                            <div class="custom-control custom-checkbox ">
+                                <input type="checkbox" class="custom-control-input" onchange="" id="customCheck1">
+                                <label class="custom-control-label tapable" for="customCheck1"></label>
+                            </div>
+
+                        </div>
+
+                        <div class="col-10 pl-0 ">
+                            <i class="fa fa-minus-circle text-danger float-right mt-1 mr-2 tapable" onclick="alert('done')"></i>
+                            <p onclick="showTask('My last awesome Task\'s that is good', '12-12-2020', '')" class="font-weight-light text-truncate pr-2 tapable">
+                                <strong class="">My last awesome Tasks that is good</strong>
+                            </p>
+                            <hr>
+                        </div>
+                    </div>
+                    <!-- task item end -->
+
+                    <!-- task item start -->
+                    <div class="row animated fadeInUp pl-3 pr-2 mt-1">
+                        <div class="col-2"></div>
+
+                        <div class="col-10 ">
+                            <p class="font-weight-light text-truncate pr-2 complete-task line-through text-primary">
+                                <strong class="">My last awesome Tasks</strong>
+                            </p>
+                            <hr>
+                        </div>
+                    </div>
+                    <!-- task item end -->
+
+                </div>
+
+
+                <!-- Bottom navigation -->
+                <div class="bottom-nav border-top bg-white animated fadeInDown">
+                    <div class="row text-center">
+
+                        <div class="col-8 pt-4 bottom-nav-item bottom-nav-item-active">
+                            <form id="update-task-list-form" class="" action="tasks/update" method="POST">
+<!--                                @method('PUT')-->
+<!--                                @csrf-->
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                    <label class="btn btn-outline-primary tapable"
+                                           data-toggle="tooltip"
+                                           data-placement="bottom"
+                                           title="Blue"
+                                    >
+                                        <input type="radio"
+                                               name="color"
+                                               onchange="updateTaskColor('primary')"
+                                               id="primary" checked>
+                                    </label>
+
+                                    <label class="btn btn-outline-info tapable"
+                                           data-toggle="tooltip"
+                                           data-placement="bottom"
+                                           title="Light Blue"
+                                    >
+                                        <input type="radio"
+                                               name="color"
+                                               onchange="updateTaskColor('info')"
+                                               id="info">
+                                    </label>
+
+                                    <label class="btn btn-outline-success tapable"
+                                           data-toggle="tooltip"
+                                           data-placement="bottom"
+                                           title="Green"
+                                    >
+                                        <input type="radio"
+                                               name="color"
+                                               onchange="updateTaskColor('success')"
+                                               id="success">
+                                    </label>
+
+                                    <label class="btn btn-outline-warning tapable"
+                                           data-toggle="tooltip"
+                                           data-placement="bottom"
+                                           title="Gold"
+                                    >
+                                        <input type="radio"
+                                               name="color"
+                                               onchange="updateTaskColor('warning')"
+                                               id="warning">
+                                    </label>
+
+                                    <label class="btn btn-outline-danger tapable"
+                                           data-toggle="tooltip"
+                                           data-placement="bottom"
+                                           title="Ruby Red"
+                                    >
+                                        <input type="radio"
+                                               name="color"
+                                               onchange="updateTaskColor('danger')"
+                                               id="danger">
+                                    </label>
+                                </div>
+
+                            </form>
+                        </div>
+
+                        <div class="col-4 bottom-nav-item pb-3 pt-3">
+                            <!-- Add Popup button -->
+                            <button class="btn btn-primary font-weight-light"
+                                    onclick="$('#addModal').modal('show')"
+                                    data-toggle="tooltip"
+                                    data-placement="top"
+                                    id="btn-add-task"
+                                    title="Add Task">
+
+                                <i class="fa fa-plus"></i>
+
+                            </button>
+                            <!-- Add Popup button -->
+                        </div>
+
+                    </div>
+                </div>
+                <!-- Bottom navigation -->
+
+
+            </div>
+        </div>
+
+        <div class="col-xl-4 col-lg-4 col-md-2 col-sm-1 col-xs-12"></div>
+    </div>
+</section>
+
+
+<!-- Start of add Modal -->
+<div class="modal fade" id="addModal" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalCenterTitle"
+     aria-hidden="true">
+    <div class="modal-dialog pt-5" role="document">
+
+        <div class="row mt-5 animated bounceIn">
+            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-1 col-xs-12"></div>
+
+            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-10 col-xs-12">
+                <div class="modal-content">
+                    <div class="modal-header">
+
+                        <h5 class="modal-title" id="exampleModalLongTitle">
+                            Add Task
+                        </h5>
+
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="add-form" class="" action="tasks" method="POST">
+                            <!--                            @csrf-->
+                            <div class="form-group col-12 text-center">
+                                <label for="title">Task</label>
+                                <input type="text"
+                                       id="title"
+                                       class="form-control border-primary"
+                                       name="title"
+                                       placeholder="Enter Task Title"
+                                       autocomplete="off"
+                                >
+                                <div class="invalid-feedback">
+                                    Please provide a Task Title.
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="btn-save"
+                                class="btn btn-primary btn-sm"
+                                form="add-form">
+
+                            <i class="fa fa-plus-circle"></i>
+                            Add Task
+
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-1 col-xs-12"></div>
+        </div>
+
+    </div>
+</div>
+<!-- End of Add Modal -->
+
+
+<!-- Start of Task Modal -->
+<div class="modal fade pt-5" id="taskModal" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalCenterTitle"
+     aria-hidden="true">
+    <div class="modal-dialog pt-5 mt-4" role="document">
+
+        <div class="row mt-5 animated bounceIn">
+            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-1 col-xs-12"></div>
+
+            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-10 col-xs-12">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <p>
+                            <strong>Task: </strong><br>
+                            <span id="task-info">This is my awesome task that am talking about</span>
+                        </p>
+                        <p>
+                            <strong>Date: </strong>
+                            <span id="task-date"></span>
+                        </p>
+
+                        <p>
+                            <strong>Status: </strong>
+                            <span id="task-completed" class="text-muted"></span>
+                        </p>
+
+                        <div class="text-right">
+                            <button onclick="$('#taskModal').modal('hide')" id="btn-show-task" class="btn btn-sm btn-outline-primary">Ok</button>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-1 col-xs-12"></div>
+        </div>
+
+    </div>
+</div>
+<!-- End of Task Modal -->
+
+<!-- Toast Start -->
+
+<div id="myToast" role="alert" aria-live="assertive" aria-atomic="true" class="toast ml-2" data-delay="1000" style="position: absolute; bottom: 80px; right: 10px;">
+    <div class="toast-header">
+        <span id="toast-status"><i class="fa fa-exclamation-circle"></i></span> <strong id="toast-title" class="mr-auto ml-2"> Task & Note App</strong>
+        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div id="toast-body" class="toast-body">
+        Hello, world! This is a toast message.
+    </div>
+</div>
+<!-- Toast End -->
+
+</body>
+<script type="text/javascript" src="assets/js/libraries/jquery.min.js"></script>
+<script type="text/javascript" src="assets/js/libraries/popper.min.js"></script>
+<script type="text/javascript" src="assets/js/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/js/script.js"></script>
+
+<script>
+    taskCompleteCurrentColor = 'primary';
+</script>
+</html>

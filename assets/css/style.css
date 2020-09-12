@@ -1,0 +1,140 @@
+@import url(https://fonts.googleapis.com/css?family=Work+Sans);
+
+body {
+    font-family: 'Work Sans', sans-serif;
+}
+
+@-webkit-keyframes rotating {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes rotating {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.circular {
+    animation: rotating 1s linear infinite;
+    position: relative;
+}
+
+.lose-focus {
+    pointer-events: none;
+    opacity: .8;
+}
+
+.line-through {
+    text-decoration: line-through;
+}
+
+.line-height-1 {
+    line-height: normal;
+}
+
+.tapable {
+    cursor: pointer;
+}
+
+.hoverable:hover {
+    box-shadow: #b9bbbe 1px 1px 5px;
+}
+
+.crop-text-2 {
+    -webkit-line-clamp: 6;
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+.cards-wrapper {
+    flex: 1;
+    display: flex;
+    overflow-x: auto;
+}
+
+.cards-wrapper .card-item {
+    height: 230px;
+}
+
+.tasks-wrapper {
+    min-height: 40vh;
+    max-height: 60vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.tasks-wrapper::-webkit-scrollbar {
+    display: none;
+}
+.cards-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.cards-wrapper::-moz-viewport-scroll {
+    display: none;
+}
+
+.bottom-nav-item {
+    color: #6c757d;
+}
+
+.bottom-nav-item-active {
+    color: #007bff !important;
+}
+
+.display-5 {
+    font-size: 1.5em;
+}
+
+@media only screen and (max-width: 425px) {
+
+    .bottom-nav {
+        position: fixed;
+        bottom: 0;
+        width: 92%;
+        margin-left: 0;
+        z-index: 99;
+    }
+}
+
+@media only screen and (min-width: 427px) {
+    .body {
+        margin-top: 10%;
+        border: 1px solid #efefef;
+        border-radius: 5px;
+    }
+}
+
+@media only screen and (min-width: 427px) and (max-width: 990px) {
+    .body {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

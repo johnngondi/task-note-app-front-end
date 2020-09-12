@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task & Note Manager</title>
+    <link rel="shortcut icon" href="assets/images/brand/favicon.png">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/libraries/animate.css">
+    <link rel="stylesheet" type="text/css" href="assets/fonts/fa/all.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+<section class="container">
+    <div class="row">
+        <div class="col-xl-4 col-lg-4 col-md-2 col-sm-1 col-xs-12"></div>
+
+        <div class="col-xl-4 col-lg-4 col-md-8 col-sm-10 col-xs-12">
+            <div class="body pt-4">
+
+                <div class="row mt-2 animated fadeInDown">
+                    <div class="col-6 pl-5">
+                        <img alt="logo" src="assets/images/brand/logo-128.png" width="50px">
+                    </div>
+                </div>
+
+                <div class="row mt-5">
+                    <div class="col-12 text-center animated fadeIn">
+                        <hr>
+                        <h3 class="font-weight-light" style="margin-top: -38px;">
+                            <span class="bg-white pl-3 pr-3">
+                                <strong>Tasks</strong>
+                                <span class="text-muted">Lists</span>
+                            </span>
+                        </h3>
+                    </div>
+                </div>
+
+                <!-- Add Popup button -->
+                <div class="row mt-4">
+                    <div class="col-12 text-center animated bounceIn">
+                        <button class="btn btn-outline-white text-muted border font-weight-light"
+                                data-toggle="modal"
+                                data-target="#addModal">
+                            <i class="fa fa-plus"></i>
+                        </button>
+                        <br>
+                        <span class="text-secondary">
+                            Add List
+                        </span>
+                    </div>
+                </div>
+                <!-- Add Popup button -->
+
+                <div class="pl-2 mt-5 pb-3 pr-5 ml-0 cards-wrapper">
+
+                    <!-- Start of Task List card-->
+                    <div class="card-item">
+                        <div class="card bg-danger text-white tapable hoverable mr-2 animated fadeInRight"
+                             style="height: 205px; width: 170px">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12">
+
+                                        <div class="card-title font-weight-normal text-truncate pr-2">
+                                            My Tasks that are ok
+                                        </div>
+
+                                        <hr style="width: 140px;" class="mr-0 bg-white mb-0">
+
+                                        <p class="text-truncate line-height-1 pb-0 mb-2">
+                                            <small class="line-through text-white-50">
+                                                Book Flights
+                                            </small>
+                                        </p>
+
+                                        <p class="text-truncate line-height-1 pb-0 mb-2">
+                                            <small class="">
+                                                Buy Bag
+                                            </small>
+                                        </p>
+
+                                        <p class="text-truncate line-height-1 pb-0 mb-2">
+                                            <small class="">
+                                                get my suit from dry cleaning
+                                            </small>
+                                        </p>
+
+                                        <p class="text-truncate line-height-1 pb-0 mb-2">
+                                            <small class="line-through text-white-50">
+                                                Book Flights
+                                            </small>
+                                        </p>
+
+                                        <p class="text-truncate line-height-1 pb-0 mb-2">
+                                            <small class="">
+                                                Buy Bag
+                                            </small>
+                                        </p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End of Task List card-->
+
+                </div>
+
+                <!-- Bottom navigation -->
+                <div class="bottom-nav border-top bg-white animated fadeInDown">
+                    <div class="row text-center">
+                        <div class="col-4 border-right pb-2 pt-3 mb-2 tapable bottom-nav-item bottom-nav-item-active">
+                            <i class="fa fa-list"></i>
+                        </div>
+                        <div class="col-4 border-right pb-2 pt-3 mb-2 tapable bottom-nav-item">
+                            <i class="far fa-file-alt"></i>
+                        </div>
+                        <div class="col-4 tapable bottom-nav-item">
+                            <i class="fa fa-ellipsis-v pb-2 pt-3 mb-2"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- Bottom navigation -->
+
+
+            </div>
+        </div>
+
+        <div class="col-xl-4 col-lg-4 col-md-2 col-sm-1 col-xs-12"></div>
+    </div>
+</section>
+
+
+<!-- Start of add Modal -->
+<div class="modal fade" id="addModal" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalCenterTitle"
+     aria-hidden="true">
+    <div class="modal-dialog pt-5" role="document">
+
+        <div class="row mt-5 animated bounceIn">
+            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-1 col-xs-12"></div>
+
+            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-10 col-xs-12">
+                <div class="modal-content">
+                    <div class="modal-header">
+
+                        <h5 class="modal-title" id="exampleModalLongTitle">
+                            Add List
+                        </h5>
+
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="add-list-form" class="" action="tasks-lists" method="POST">
+<!--                            @csrf-->
+                            <div class="form-group col-12 text-center">
+                                <label for="title">List Title</label>
+                                <input type="text"
+                                       id="title"
+                                       class="form-control"
+                                       name="title"
+                                       placeholder="Enter List Title"
+                                       autocomplete="off"
+                                >
+                                <div class="invalid-feedback">
+                                    Please provide a Title.
+                                </div>
+                            </div>
+                            <div class="form-group col-12 text-center">
+                                <p class="mb-0">Select Color</p>
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                    <label class="btn btn-outline-primary tapable"
+                                           data-toggle="tooltip"
+                                           data-placement="bottom"
+                                           title="Blue">
+                                        <input type="radio" name="color" id="primary" checked>
+                                    </label>
+
+                                    <label class="btn btn-outline-info tapable"
+                                           data-toggle="tooltip"
+                                           data-placement="bottom"
+                                           title="Light Blue">
+                                        <input type="radio" name="color" id="info">
+                                    </label>
+
+                                    <label class="btn btn-outline-success tapable"
+                                           data-toggle="tooltip"
+                                           data-placement="bottom"
+                                           title="Green">
+                                        <input type="radio" name="color" id="success">
+                                    </label>
+
+                                    <label class="btn btn-outline-warning tapable"
+                                           data-toggle="tooltip"
+                                           data-placement="bottom"
+                                           title="Gold">
+                                        <input type="radio" name="color" id="warning">
+                                    </label>
+
+                                    <label class="btn btn-outline-danger tapable"
+                                           data-toggle="tooltip"
+                                           data-placement="bottom"
+                                           title="Ruby Red">
+                                        <input type="radio" name="color" id="danger">
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="btn-save"
+                                class="btn btn-primary btn-sm"
+                                form="add-list-form">
+
+                            <i class="fa fa-plus-circle"></i>
+                            Add List
+
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-1 col-xs-12"></div>
+        </div>
+
+    </div>
+</div>
+<!-- End of Add Modal -->
+
+</body>
+<script type="text/javascript" src="assets/js/libraries/jquery.min.js"></script>
+<script type="text/javascript" src="assets/js/libraries/popper.min.js"></script>
+<script type="text/javascript" src="assets/js/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/js/script.js"></script>
+</html>
