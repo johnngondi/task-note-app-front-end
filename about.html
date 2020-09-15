@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task & Note Manager</title>
+    <link rel="shortcut icon" href="assets/images/brand/favicon.png">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/libraries/animate.css">
+    <link rel="stylesheet" type="text/css" href="assets/fonts/fa/all.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+<section class="container">
+    <div class="row">
+        <div class="col-xl-4 col-lg-4 col-md-2 col-sm-1 col-xs-12"></div>
+
+        <div class="col-xl-4 col-lg-4 col-md-8 col-sm-10 col-xs-12">
+            <div class="body pt-4">
+
+                <div class="row mt-1 animated fadeInDown">
+                    <div class="col-12 mb-2 text-center">
+                        <img alt="logo" src="assets/images/brand/logo-128.png" width="50px">
+                    </div>
+
+                    <div class="col-12 text-center">
+                        <h6 class="text-secondary">Task & Note Manager App</h6>
+                        <p class="text-muted">Version 0.1.0</p>
+                    </div>
+                </div>
+
+                <div class="row ">
+                    <div class="col-12 text-center animated fadeIn">
+                        <hr>
+                    </div>
+                </div>
+
+                <div class="row mt-2 pb-2">
+                    <div class="col-12 text-center">
+
+                        <div onclick="goTo('./')"
+                             class="row pb-3 pt-3 pl-2 pr-2 ml-3 mr-3 mb-3 animated fadeInUp align-content-center text-secondary tapable hoverable rounded-pill border">
+
+                            <div class="col-10 text-left">
+                                <i class="fa fa-home"></i> Back Home
+                            </div>
+                            <div class="col-2">
+                                <i class="fa fa-angle-right"></i>
+                            </div>
+                        </div>
+
+                        <div onclick="$('#logout-form').submit()"
+                             class="row pb-3 pt-3 pl-2 pr-2 ml-3 mr-3 mb-3 animated fadeInUp align-content-center text-secondary tapable hoverable rounded-pill border">
+                            <form id="logout-form"
+                                  method="POST"
+                                  action="logout">
+<!--                                @csrf-->
+                            </form>
+                            <div class="col-10 text-left">
+                                <i class="fa fa-sign-out-alt"></i> Logout
+                            </div>
+                            <div class="col-2">
+                                <i class="fa fa-angle-right"></i>
+                            </div>
+                        </div>
+
+                        <div onclick="$('#confirmModal').modal('show')"
+                             class="row pb-3 pt-3 pl-2 pr-2 ml-3 mr-3 mb-4 animated fadeInUp align-content-center text-danger tapable hoverable rounded-pill border">
+                            <form id="delete-account-form"
+                                  method="POST"
+                                  action="user/delete">
+<!--                                @csrf-->
+                            </form>
+                            <div class="col-10 text-left">
+                                <i class="fa fa-exclamation-circle"></i> Delete My Account
+                            </div>
+                            <div class="col-2">
+                                <i class="fa fa-angle-right"></i>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <h6 class="text-secondary">Credits</h6>
+                                <p class="text-muted ml-3 mr-3">
+                                    <small>
+                                        <strong>Developer</strong>: <a target="_blank" href="https://github.com/johnngondi">John Ngondi</a>
+                                    </small>
+
+                                    <br>
+
+                                    <small>
+                                        <strong>Logo</strong>: <a target="_blank" href="https://freepik.com">Freepik</a>
+                                    </small>
+                                </p>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="col-xl-4 col-lg-4 col-md-2 col-sm-1 col-xs-12"></div>
+    </div>
+</section>
+
+
+<!-- Start of Confirm Modal -->
+<div class="modal fade pt-5" id="confirmModal" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalCenterTitle"
+     aria-hidden="true">
+    <div class="modal-dialog pt-3 mt-4" role="document">
+
+        <div class="row mt-5 animated bounceIn">
+            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-1 col-xs-12"></div>
+
+            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-10 col-xs-12">
+                <div class="modal-content">
+
+                    <div class="modal-body text-center pt-4">
+                        <h5 class=" text-center text-danger" id="confirm-modal-title">
+                            Delete?
+                        </h5>
+                        <hr>
+
+                        <p id="confirm-modal-body"
+                           class="text-muted">
+                            Are you sure you want to delete account?
+                        </p>
+
+                    </div>
+
+                    <div class="modal-footer text-right">
+                        <button onclick="$('#confirmModal').modal('hide')"
+                                class="btn btn-light btn-sm">
+                            Cancel
+                        </button>
+
+                        <button id="btn-confirm-modal-confirm"
+                                class="btn btn-sm btn-danger">
+                            <i class="fa fa-trash-alt"></i>
+                            Delete
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-1 col-xs-12"></div>
+        </div>
+
+    </div>
+</div>
+<!-- End of Confirm Modal -->
+
+
+
+</body>
+<script type="text/javascript" src="assets/js/libraries/jquery.min.js"></script>
+<script type="text/javascript" src="assets/js/libraries/popper.min.js"></script>
+<script type="text/javascript" src="assets/js/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/js/script.js"></script>
+</html>

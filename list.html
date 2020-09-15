@@ -23,8 +23,8 @@
                         <img alt="logo" src="assets/images/brand/logo-128.png" width="50px">
                     </div>
                     <div class="col-8 text-right pr-5 pt-3">
-                        <i class="fa fa-trash-alt text-danger display-5 mr-4 tapable"></i>
-                        <i class="fa fa-times display-5 text-muted tapable"></i>
+                        <i onclick="$('#confirmModal').modal('show')" class="fa fa-trash-alt text-danger display-5 mr-4 tapable"></i>
+                        <i onclick="goTo('./')" class="fa fa-times display-5 text-muted tapable"></i>
                     </div>
                 </div>
 
@@ -52,7 +52,7 @@
                         </div>
 
                         <div class="col-10 pl-0 ">
-                            <i class="fa fa-minus-circle text-danger float-right mt-1 mr-2 tapable" onclick="alert('done')"></i>
+                            <i class="fa fa-minus-circle text-danger float-right mt-1 mr-2 tapable" onclick="showToast('Task Deleted!')"></i>
                             <p onclick="showTask('My last awesome Task\'s that is good', '12-12-2020', '')" class="font-weight-light text-truncate pr-2 tapable">
                                 <strong class="">My last awesome Tasks that is good</strong>
                             </p>
@@ -291,13 +291,59 @@
 </div>
 <!-- Toast End -->
 
+<!-- Start of Confirm Modal -->
+<div class="modal fade pt-5" id="confirmModal" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalCenterTitle"
+     aria-hidden="true">
+    <div class="modal-dialog pt-3 mt-4" role="document">
+
+        <div class="row mt-5 animated bounceIn">
+            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-1 col-xs-12"></div>
+
+            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-10 col-xs-12">
+                <div class="modal-content">
+
+                    <div class="modal-body text-center pt-4">
+                        <h5 class=" text-center text-danger" id="confirm-modal-title">
+                            Delete?
+                        </h5>
+                        <hr>
+
+                        <p id="confirm-modal-body"
+                           class="text-muted">
+                            Are you sure you want to delete?
+                        </p>
+
+                    </div>
+
+                    <div class="modal-footer text-right">
+                        <button onclick="$('#confirmModal').modal('hide')"
+                                class="btn btn-light btn-sm">
+                            Cancel
+                        </button>
+
+                        <button id="btn-confirm-modal-confirm"
+                                class="btn btn-sm btn-danger">
+                            <i class="fa fa-trash-alt"></i>
+                            Delete
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-1 col-xs-12"></div>
+        </div>
+
+    </div>
+</div>
+<!-- End of Confirm Modal -->
+
 </body>
 <script type="text/javascript" src="assets/js/libraries/jquery.min.js"></script>
 <script type="text/javascript" src="assets/js/libraries/popper.min.js"></script>
 <script type="text/javascript" src="assets/js/bootstrap/bootstrap.min.js"></script>
 <script type="text/javascript" src="assets/js/script.js"></script>
 
-<script>
-    taskCompleteCurrentColor = 'primary';
-</script>
+
 </html>

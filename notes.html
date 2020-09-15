@@ -56,7 +56,7 @@
                 <div class="pl-2 mt-4 pb-3 pr-5 ml-0 cards-wrapper">
 
                     <!-- Start of Note card-->
-                    <div class="card-item">
+                    <div onclick="goTo('./note.html')" class="card-item">
 
                         <div class="bd-callout bd-callout-danger tapable hoverable mr-2 animated fadeInRight"
                              style="height: 205px; width: 170px">
@@ -64,7 +64,7 @@
                                 <div class="row pl-2">
 
                                     <div class="card-title font-weight-bold text-truncate pr-2 mb-0">
-                                        My New Note
+                                        <h4>My New Note</h4>
                                     </div>
 
                                     <hr style="width: 150px;" class="mr-0 mt-1 mb-1">
@@ -88,40 +88,9 @@
 
 
                     <!-- Start of Note card-->
-                    <div class="card-item">
+                    <div onclick="goTo('./note.html')" class="card-item">
 
                         <div class="bd-callout bd-callout-warning tapable hoverable mr-2 animated fadeInRight"
-                             style="height: 205px; width: 170px">
-
-                            <div class="row pl-2">
-
-                                <div class="card-title font-weight-bold text-truncate pr-2 mb-0">
-                                    My New Note
-                                </div>
-
-                                <hr style="width: 150px;" class="mr-0 mt-1 mb-1">
-
-                                <p class="crop-text-2 line-height-1 pb-0 mb-2">
-                                    <small class="">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda
-                                        consectetur delectus distinctio esse, iure iusto, maiores nemo officia
-                                        placeat quia rerum velit veritatis, vero vitae voluptatibus? Rem repudiandae
-                                        rerum tempore?
-
-                                    </small>
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-                    <!-- End of Note card-->
-
-                    <!-- Start of Note card-->
-                    <div class="card-item">
-
-                        <div class="bd-callout bd-callout-info tapable hoverable mr-2 animated fadeInRight"
                              style="height: 205px; width: 170px">
 
                             <div class="row pl-2">
@@ -149,18 +118,49 @@
                     </div>
                     <!-- End of Note card-->
 
+                    <!-- Start of Note card-->
+                    <div onclick="goTo('./note.html')" class="card-item">
+
+                        <div class="bd-callout bd-callout-info tapable hoverable mr-2 animated fadeInRight"
+                             style="height: 205px; width: 170px">
+
+                            <div class="row pl-2">
+
+                                <div class="card-title font-weight-bold text-truncate pr-2 mb-0">
+                                    <h4 class="">My New Note</h4>
+                                </div>
+
+                                <hr style="width: 150px;" class="mr-0 mt-1 mb-1">
+
+                                <p class="crop-text-2 line-height-1 pb-0 mb-2">
+                                    <small class="">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda
+                                        consectetur delectus distinctio esse, iure iusto, maiores nemo officia
+                                        placeat quia rerum velit veritatis, vero vitae voluptatibus? Rem repudiandae
+                                        rerum tempore?
+
+                                    </small>
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!-- End of Note card-->
+
                 </div>
 
                 <!-- Bottom navigation -->
                 <div class="bottom-nav border-top bg-white animated fadeInDown">
                     <div class="row text-center">
-                        <div class="col-4 border-right pb-2 pt-3 mb-2 tapable bottom-nav-item bottom-nav-item-active">
+                        <div onclick="goTo('./')" class="col-4 border-right pb-2 pt-3 mb-2 tapable bottom-nav-item">
                             <i class="fa fa-list"></i>
                         </div>
-                        <div class="col-4 border-right pb-2 pt-3 mb-2 tapable bottom-nav-item">
+                        <div onclick="" class="col-4 border-right pb-2 pt-3 mb-2 tapable bottom-nav-item bottom-nav-item-active">
                             <i class="far fa-file-alt"></i>
                         </div>
-                        <div class="col-4 tapable bottom-nav-item">
+                        <div onclick="goTo('./about.html')" class="col-4 tapable bottom-nav-item">
                             <i class="fa fa-ellipsis-v pb-2 pt-3 mb-2"></i>
                         </div>
                     </div>

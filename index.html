@@ -55,7 +55,7 @@
                 <div class="pl-2 mt-5 pb-3 pr-5 ml-0 cards-wrapper">
 
                     <!-- Start of Task List card-->
-                    <div class="card-item">
+                    <div onclick="goTo('./list.html')" class="card-item">
                         <div class="card bg-danger text-white tapable hoverable mr-2 animated fadeInRight"
                              style="height: 205px; width: 170px">
                             <div class="card-body">
@@ -113,10 +113,10 @@
                         <div class="col-4 border-right pb-2 pt-3 mb-2 tapable bottom-nav-item bottom-nav-item-active">
                             <i class="fa fa-list"></i>
                         </div>
-                        <div class="col-4 border-right pb-2 pt-3 mb-2 tapable bottom-nav-item">
+                        <div onclick="goTo('./notes.html')" class="col-4 border-right pb-2 pt-3 mb-2 tapable bottom-nav-item">
                             <i class="far fa-file-alt"></i>
                         </div>
-                        <div class="col-4 tapable bottom-nav-item">
+                        <div onclick="goTo('./about.html')" class="col-4 tapable bottom-nav-item">
                             <i class="fa fa-ellipsis-v pb-2 pt-3 mb-2"></i>
                         </div>
                     </div>

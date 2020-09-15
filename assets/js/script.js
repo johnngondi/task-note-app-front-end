@@ -169,3 +169,6 @@ function isEmail(value) {
 	let emailReg = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 	return emailReg.test(value);
 }
+function goTo(path) {
+	location.href = path;
+}
